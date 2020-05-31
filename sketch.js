@@ -25,7 +25,7 @@ function setup() {
 	dustbin1 = new Dustbin(1300, 660, 200, 20);
 	dustbin2 = new Dustbin(1210, 620, 20, 100);
 	dustbin3 = new Dustbin(1410, 620, 20, 100);
-	paper1 = new Paper(200, 670);
+	paper1 = new Paper(200, 670, 40);
 
 	Engine.run(engine);
   

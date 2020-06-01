@@ -6,7 +6,7 @@ class Paper {
       density: 1.2,
       restitution: 0.3
     }
-    this.body = Bodies.circle(x, y, radius, options);
+    this.body = Bodies.circle(x, y, radius/2, options);
     this.radius = radius;
     World.add(world, this.body);
   }
@@ -18,7 +18,7 @@ class Paper {
     rotate(angle);
     ellipseMode(CENTER);
     fill("violet");
-    ellipse(0, 0, this.radius);
+    ellipse(0, 0, this.radius, this.radius);
     pop();
   }
 };

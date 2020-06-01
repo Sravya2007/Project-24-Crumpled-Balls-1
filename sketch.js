@@ -16,17 +16,27 @@ function preload()
 }
 
 function setup() {
-	createCanvas(1500, 700);
+	createCanvas(1600, 700);
 
 	engine = Engine.create();
 	world = engine.world;
 
-	ground1 = new Ground(750, 680, 1500, 20);
+	ground1 = new Ground(width/2, 680, width, 20);
 	dustbin1 = new Dustbin(1300, 660, 200, 20);
 	dustbin2 = new Dustbin(1210, 620, 20, 100);
 	dustbin3 = new Dustbin(1410, 620, 20, 100);
-	paper1 = new Paper(200, 670, 40);
+	paper1 = new Paper(200, 675, 40);
 
+
+	var render = Render.create({
+		element: document.body,
+		Engine: engine, 
+		options:{
+			width: 1200,
+			height: 700,
+			wireframes: false
+		}
+	});
 	Engine.run(engine);
   
 }
@@ -43,14 +53,12 @@ function draw() {
   paper1.display();
 
   drawSprites();
-
-  keyPressed();
  
 }
 
 function keyPressed() {
 	if(keyCode === UP_ARROW) {
-		Matter.Body.applyForce(paper1.body, paper1.body.position, {x: 85, y:-85});
+		Matter.Body.applyForce(paper1.body, paper1.body.position, {x: 95, y:-95});
 	}
   
 }
